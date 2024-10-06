@@ -55,14 +55,38 @@ build CMakeFiles/Code_desafio2.dir/main.cpp.obj: CXX_COMPILER__Code_desafio2_uns
   OBJECT_DIR = CMakeFiles\Code_desafio2.dir
   OBJECT_FILE_DIR = CMakeFiles\Code_desafio2.dir
 
-build CMakeFiles/Code_desafio2.dir/FuncionesD2.cpp.obj: CXX_COMPILER__Code_desafio2_unscanned_Debug C$:/Users/Dell/Desktop/Udea/2$ semestre/informatica$ 2/Desafio2_repo/DESAFIO_2/Code_desafio2/FuncionesD2.cpp || cmake_object_order_depends_target_Code_desafio2
-  DEP_FILE = CMakeFiles\Code_desafio2.dir\FuncionesD2.cpp.obj.d
+build CMakeFiles/Code_desafio2.dir/Clase_Tanque.cpp.obj: CXX_COMPILER__Code_desafio2_unscanned_Debug C$:/Users/Dell/Desktop/Udea/2$ semestre/informatica$ 2/Desafio2_repo/DESAFIO_2/Code_desafio2/Clase_Tanque.cpp || cmake_object_order_depends_target_Code_desafio2
+  DEP_FILE = CMakeFiles\Code_desafio2.dir\Clase_Tanque.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Code_desafio2.dir
   OBJECT_FILE_DIR = CMakeFiles\Code_desafio2.dir
 
-build CMakeFiles/Code_desafio2.dir/ClasesD2.cpp.obj: CXX_COMPILER__Code_desafio2_unscanned_Debug C$:/Users/Dell/Desktop/Udea/2$ semestre/informatica$ 2/Desafio2_repo/DESAFIO_2/Code_desafio2/ClasesD2.cpp || cmake_object_order_depends_target_Code_desafio2
-  DEP_FILE = CMakeFiles\Code_desafio2.dir\ClasesD2.cpp.obj.d
+build CMakeFiles/Code_desafio2.dir/Clase_Venta.cpp.obj: CXX_COMPILER__Code_desafio2_unscanned_Debug C$:/Users/Dell/Desktop/Udea/2$ semestre/informatica$ 2/Desafio2_repo/DESAFIO_2/Code_desafio2/Clase_Venta.cpp || cmake_object_order_depends_target_Code_desafio2
+  DEP_FILE = CMakeFiles\Code_desafio2.dir\Clase_Venta.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Code_desafio2.dir
+  OBJECT_FILE_DIR = CMakeFiles\Code_desafio2.dir
+
+build CMakeFiles/Code_desafio2.dir/Clase_RedNacional.cpp.obj: CXX_COMPILER__Code_desafio2_unscanned_Debug C$:/Users/Dell/Desktop/Udea/2$ semestre/informatica$ 2/Desafio2_repo/DESAFIO_2/Code_desafio2/Clase_RedNacional.cpp || cmake_object_order_depends_target_Code_desafio2
+  DEP_FILE = CMakeFiles\Code_desafio2.dir\Clase_RedNacional.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Code_desafio2.dir
+  OBJECT_FILE_DIR = CMakeFiles\Code_desafio2.dir
+
+build CMakeFiles/Code_desafio2.dir/Clase_EstacionDeServicio.cpp.obj: CXX_COMPILER__Code_desafio2_unscanned_Debug C$:/Users/Dell/Desktop/Udea/2$ semestre/informatica$ 2/Desafio2_repo/DESAFIO_2/Code_desafio2/Clase_EstacionDeServicio.cpp || cmake_object_order_depends_target_Code_desafio2
+  DEP_FILE = CMakeFiles\Code_desafio2.dir\Clase_EstacionDeServicio.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Code_desafio2.dir
+  OBJECT_FILE_DIR = CMakeFiles\Code_desafio2.dir
+
+build CMakeFiles/Code_desafio2.dir/Clase_Surtidor.cpp.obj: CXX_COMPILER__Code_desafio2_unscanned_Debug C$:/Users/Dell/Desktop/Udea/2$ semestre/informatica$ 2/Desafio2_repo/DESAFIO_2/Code_desafio2/Clase_Surtidor.cpp || cmake_object_order_depends_target_Code_desafio2
+  DEP_FILE = CMakeFiles\Code_desafio2.dir\Clase_Surtidor.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Code_desafio2.dir
+  OBJECT_FILE_DIR = CMakeFiles\Code_desafio2.dir
+
+build CMakeFiles/Code_desafio2.dir/Funciones.cpp.obj: CXX_COMPILER__Code_desafio2_unscanned_Debug C$:/Users/Dell/Desktop/Udea/2$ semestre/informatica$ 2/Desafio2_repo/DESAFIO_2/Code_desafio2/Funciones.cpp || cmake_object_order_depends_target_Code_desafio2
+  DEP_FILE = CMakeFiles\Code_desafio2.dir\Funciones.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Code_desafio2.dir
   OBJECT_FILE_DIR = CMakeFiles\Code_desafio2.dir
@@ -75,7 +99,7 @@ build CMakeFiles/Code_desafio2.dir/ClasesD2.cpp.obj: CXX_COMPILER__Code_desafio2
 #############################################
 # Link the executable Code_desafio2.exe
 
-build Code_desafio2.exe: CXX_EXECUTABLE_LINKER__Code_desafio2_Debug CMakeFiles/Code_desafio2.dir/main.cpp.obj CMakeFiles/Code_desafio2.dir/FuncionesD2.cpp.obj CMakeFiles/Code_desafio2.dir/ClasesD2.cpp.obj
+build Code_desafio2.exe: CXX_EXECUTABLE_LINKER__Code_desafio2_Debug CMakeFiles/Code_desafio2.dir/main.cpp.obj CMakeFiles/Code_desafio2.dir/Clase_Tanque.cpp.obj CMakeFiles/Code_desafio2.dir/Clase_Venta.cpp.obj CMakeFiles/Code_desafio2.dir/Clase_RedNacional.cpp.obj CMakeFiles/Code_desafio2.dir/Clase_EstacionDeServicio.cpp.obj CMakeFiles/Code_desafio2.dir/Clase_Surtidor.cpp.obj CMakeFiles/Code_desafio2.dir/Funciones.cpp.obj
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Code_desafio2.dir
