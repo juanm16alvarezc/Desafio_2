@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Dell/Desktop/Udea/2 semestre/informatica 2/Desafio2_repo/DESAFIO_2/Code_desafio2
+# Install script for directory: C:/Users/Dell/Desktop/Udea/2 semestre/informatica 2/Desafio2_repo/DESAFIO_2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

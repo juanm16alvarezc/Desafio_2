@@ -286,7 +286,7 @@ Code_desafio2_BINARY_DIR:STATIC=C:/Users/Dell/Desktop/Udea/2 semestre/informatic
 Code_desafio2_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-Code_desafio2_SOURCE_DIR:STATIC=C:/Users/Dell/Desktop/Udea/2 semestre/informatica 2/Desafio2_repo/DESAFIO_2/Code_desafio2
+Code_desafio2_SOURCE_DIR:STATIC=C:/Users/Dell/Desktop/Udea/2 semestre/informatica 2/Desafio2_repo/DESAFIO_2
 
 //Skip Qt Creator's package manager auto-setup
 QT_CREATOR_SKIP_PACKAGE_MANAGER_SETUP:BOOL=OFF
@@ -361,7 +361,7 @@ CMAKE_GENERATOR_PLATFORM:INTERNAL=
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=C:/Users/Dell/Desktop/Udea/2 semestre/informatica 2/Desafio2_repo/DESAFIO_2/Code_desafio2
+CMAKE_HOME_DIRECTORY:INTERNAL=C:/Users/Dell/Desktop/Udea/2 semestre/informatica 2/Desafio2_repo/DESAFIO_2
 //ADVANCED property for variable: CMAKE_INSTALL_BINDIR
 CMAKE_INSTALL_BINDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_INSTALL_DATADIR
