@@ -34,7 +34,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 20,
+				"line" : 25,
 				"parent" : 0
 			}
 		]
@@ -129,7 +129,12 @@
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				1
+				1,
+				8,
+				9,
+				10,
+				11,
+				12
 			]
 		}
 	],
@@ -143,7 +148,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Funciones_Clases.h",
+			"path" : "Funciones_.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -181,6 +186,31 @@
 			"compileGroupIndex" : 0,
 			"path" : "Funciones.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ClaseEstacionDeServicio.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ClaseRedNacional.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ClaseSurtidor.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ClaseTanque.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "ClaseVenta.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

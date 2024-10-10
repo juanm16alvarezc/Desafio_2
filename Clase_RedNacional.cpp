@@ -1,17 +1,17 @@
-#include <iostream>
-#include <string>
-using namespace std;
+#include "ClaseEstacionDeServicio.h"  // Para la clase EstacionDeServicio
+#include <iostream>                   // Para las operaciones de entrada/salida
+#include <cstdlib>                    // Para funciones como rand()
 
+using namespace std;
 
 class RedNacional {
 private:
     EstacionDeServicio* estaciones;
     int numEstaciones;
     int capacidad;
-    double precios[3][3];
+    double precios[3][3];  // Precios por región (Norte, Centro, Sur) y tipo de combustible (Regular, Premium, EcoExtra)
 
 public:
-    // Constructor
     RedNacional() : numEstaciones(0), capacidad(2) {
         estaciones = new EstacionDeServicio[capacidad];
 
@@ -28,9 +28,11 @@ public:
         precios[2][1] = 1.60;  // Sur, Premium
         precios[2][2] = 1.35;  // Sur, EcoExtra
     }
+
     ~RedNacional() {
         delete[] estaciones;
     }
+
     void redimensionar(int nuevaCapacidad) {
         EstacionDeServicio* temp = new EstacionDeServicio[nuevaCapacidad];
         for (int i = 0; i < numEstaciones; i++) {
@@ -40,6 +42,8 @@ public:
         estaciones = temp;
         capacidad = nuevaCapacidad;
     }
+
+    // a. Agregar estación
     void agregarEstacion(const EstacionDeServicio& estacion) {
         if (numEstaciones == capacidad) {
             redimensionar(capacidad * 2);
@@ -47,9 +51,11 @@ public:
         estaciones[numEstaciones] = estacion;
         numEstaciones++;
     }
+
+    // b. Eliminar estación
     void eliminarEstacion(int codigo) {
         for (int i = 0; i < numEstaciones; i++) {
-            if (estaciones[i].nombre == "Estacion_" + to_string(codigo) && estaciones[i].surtidoresActivos == 0) {
+            if (estaciones[i].getCodigoIdentificador() == codigo && estaciones[i].getSurtidoresActivos() == 0) {
                 for (int j = i; j < numEstaciones - 1; j++) {
                     estaciones[j] = estaciones[j + 1];
                 }
@@ -59,36 +65,35 @@ public:
         }
         cout << "No se puede eliminar la estación: No tiene surtidores activos o no existe." << endl;
     }
+
+    // c. Calcular ventas por estación
     void calcularVentasPorEstacion() const {
         for (int i = 0; i < numEstaciones; i++) {
-            cout << "Ventas para la estación: " << estaciones[i].nombre << endl;
+            cout << "Ventas para la estación: " << estaciones[i].getNombre() << endl;
             double ventas = estaciones[i].calcularVentas();
             cout << "Monto total de ventas: $" << ventas << endl;
         }
     }
+
+    // d. Fijar precios
     void fijarPreciosPorRegion(const string& region, double precioRegular, double precioPremium, double precioEcoExtra) {
         int indiceRegion = getIndiceRegion(region);
         if (indiceRegion != -1) {
             precios[indiceRegion][0] = precioRegular;
             precios[indiceRegion][1] = precioPremium;
             precios[indiceRegion][2] = precioEcoExtra;
+
+            for (int i = 0; i < numEstaciones; i++) {
+                if (estaciones[i].getRegion() == region) {
+                    // Aquí se pueden actualizar los precios
+                }
+            }
         } else {
             cout << "Región no válida." << endl;
         }
     }
-    void mostrarPrecios(const string& region) const {
-        int indiceRegion = getIndiceRegion(region);
-        if (indiceRegion != -1) {
-            cout << "Precios en la región " << region << ":\n";
-            cout << "Regular: $" << precios[indiceRegion][0] << "\n";
-            cout << "Premium: $" << precios[indiceRegion][1] << "\n";
-            cout << "Eco Extra: $" << precios[indiceRegion][2] << "\n";
-        } else {
-            cout << "Región no válida.\n";
-        }
-    }
 
-private:
+    // Método para obtener el índice de la región
     int getIndiceRegion(const string& region) const {
         if (region == "Norte") return 0;
         if (region == "Centro") return 1;
@@ -96,3 +101,4 @@ private:
         return -1;
     }
 };
+

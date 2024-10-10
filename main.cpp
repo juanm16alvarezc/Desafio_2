@@ -1,7 +1,6 @@
 #include <iostream>
-#include "Funciones_Clases.h"
+#include "Funciones_.h"
 using namespace std;
-
 int main()
 {
     unsigned short int n;

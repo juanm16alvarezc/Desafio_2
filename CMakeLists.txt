@@ -8,13 +8,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(Code_desafio2 main.cpp
 
 
-    Funciones_Clases.h
+    Funciones_.h
     Clase_Tanque.cpp
     Clase_Venta.cpp
     Clase_RedNacional.cpp
     Clase_EstacionDeServicio.cpp
     Clase_Surtidor.cpp
-    Funciones.cpp)
+    Funciones.cpp
+    ClaseEstacionDeServicio.h
+    ClaseRedNacional.h
+    ClaseSurtidor.h
+    ClaseTanque.h
+    ClaseVenta.h)
 
 include(GNUInstallDirs)
 install(TARGETS Code_desafio2

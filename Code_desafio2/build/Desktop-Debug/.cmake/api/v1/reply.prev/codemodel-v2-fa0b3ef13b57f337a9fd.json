@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-7c92f3de52cbabd97581.json",
+					"jsonFile" : "directory-.-Debug-a47f9e11d5f555dc1a0c.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -40,7 +40,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Code_desafio2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Code_desafio2-Debug-7835e2f692210feecc3d.json",
+					"jsonFile" : "target-Code_desafio2-Debug-26a984aadd803c15556d.json",
 					"name" : "Code_desafio2",
 					"projectIndex" : 0
 				}
