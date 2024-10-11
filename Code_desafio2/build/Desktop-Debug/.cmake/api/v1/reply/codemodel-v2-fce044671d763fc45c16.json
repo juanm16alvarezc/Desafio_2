@@ -1,0 +1,61 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-dc5a47e7726289bc23c7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Code_desafio2",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "DESAFIO_2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DESAFIO_2-Debug-dba9bf303b3d78335e7b.json",
+					"name" : "DESAFIO_2",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Dell/Desktop/Udea/2 semestre/informatica 2/Desafio2_repo/DESAFIO_2/Code_desafio2/build/Desktop-Debug",
+		"source" : "C:/Users/Dell/Desktop/Udea/2 semestre/informatica 2/Desafio2_repo/DESAFIO_2"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
