@@ -62,8 +62,12 @@ void serviciosDeGestionDeRed(RedNacional& red) {
 }
 
 
+// En el archivo de implementación de los servicios
+
 void serviciosDeGestionDeEstacionesDeServicio(RedNacional& red) {
     unsigned short int N;
+
+    // Menú de opciones
     cout << "Ingrese #1 si desea agregar o eliminar surtidor de una E/S" << endl;
     cout << "Ingrese #2 si desea activar o desactivar surtidor de una E/S" << endl;
     cout << "Ingrese #3 si desea consultar el historial de transacciones de cada surtidor de una E/S" << endl;
@@ -72,34 +76,98 @@ void serviciosDeGestionDeEstacionesDeServicio(RedNacional& red) {
     cout << "Ingrese #6 si desea inicializar la capacidad del tanque de suministro" << endl;
     cin >> N;
 
+    // Validar que la opción ingresada esté entre 1 y 6
     while (N <= 0 || N > 6) {
         cout << "Ingrese valor válido:" << endl;
         cin >> N;
     }
 
     cout << '\n';
-
     if (N == 1) {
+        cout << "Lista de estaciones de servicio:" << endl;
+        red.listarEstaciones();
+        int codigoEstacion;
+        cout << "Ingrese el código de la estación de servicio a gestionar: ";
+        cin >> codigoEstacion;
+        EstacionDeServicio** estaciones = red.getEstaciones();  // Obtener el puntero a punteros
+        EstacionDeServicio* estacionEncontrada = nullptr;
 
+        // Buscar la estación en el arreglo de estaciones
+        for (int i = 0; i < red.getNumEstaciones(); ++i) {
+            if (estaciones[i]->getCodigoIdentificador() == codigoEstacion) {
+                estacionEncontrada = estaciones[i];  // Asignar la estación encontrada
+                break;
+            }
+        }
+
+        // Si no se encuentra la estación, mostrar mensaje de error
+        if (!estacionEncontrada) {
+            cout << "Estación de servicio no encontrada." << endl;
+            return;
+        }
+
+        // Listar surtidores de la estación seleccionada
+        cout << "Lista de surtidores en la estación con código " << codigoEstacion << ":" << endl;
+        estacionEncontrada->listarSurtidores();  // Llamada a la función que lista los surtidores de la estación
+
+        int opcion;
+        cout << "Desea: " << endl;
+        cout << "1 - Agregar surtidor" << endl;
+        cout << "2 - Eliminar surtidor" << endl;
+        cin >> opcion;
+
+        if (opcion == 1) {
+            // Agregar surtidor
+            int codigoSurtidor;
+            string modeloMaquina;
+            cout << "Ingrese el código del nuevo surtidor: ";
+            cin >> codigoSurtidor;
+            cout << "Ingrese Modelo de máquina: ";
+            cin.ignore();  // Limpiar el buffer de entrada
+            getline(cin, modeloMaquina);  // Leer el nombre del modelo
+            Surtidor nuevoSurtidor(codigoSurtidor, modeloMaquina);  // Crear el nuevo surtidor
+            estacionEncontrada->agregarSurtidor(nuevoSurtidor);  // Llamada a la función de agregar surtidor
+            cout << "Surtidor agregado correctamente." << endl;
+        }
+        else if (opcion == 2) {
+            // Eliminar surtidor
+            int codigoSurtidor;
+            cout << "Ingrese el código del surtidor a eliminar: ";
+            cin >> codigoSurtidor;
+            // Llamada a la función de eliminar surtidor
+            estacionEncontrada->eliminarSurtidor(codigoSurtidor);
+        }
+        else {
+            cout << "Opción no válida." << endl;
+        }
     }
-    else if (N == 2){
+    else if (N == 2) {
+        // Activar o desactivar surtidor
+        // Implementación pendiente
     }
     else if (N == 3) {
+        // Consultar historial de transacciones
+        // Implementación pendiente
     }
     else if (N == 4) {
+        // Reportar cantidad de litros vendidos por categoría
+        // Implementación pendiente
     }
     else if (N == 5) {
         // Simular venta
-        void simularVenta();
+        // Implementación pendiente
     }
     else if (N == 6) {
+        // Inicializar capacidad del tanque
+        // Implementación pendiente
     }
 }
 
+
 //void sistemaDeVerificacionDeFugas(){
-    //cout<<"en proceso del goat";
+//cout<<"en proceso del goat";
 //}
 
 //void simulacionDeVentas() {
- //   cout<<"en proceso del goat";
+//   cout<<"en proceso del goat";
 //}

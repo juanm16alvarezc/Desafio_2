@@ -120,6 +120,9 @@ int RedNacional::getIndiceRegion(const string& region) const {
     if (region == "Sur") return 2;
     return -1;
 }
-
-
+int RedNacional::getNumEstaciones() const {
+    return numEstaciones;}
+EstacionDeServicio** RedNacional::getEstaciones() const {
+    return estaciones;
+}
 

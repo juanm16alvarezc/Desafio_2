@@ -81,6 +81,6 @@ Venta* Surtidor::getVentas() const {
     return ventas;
 }
 
- // Métodos para acceder a los atributos
+// Métodos para acceder a los atributos
 int Surtidor:: getCodigo() const { return codigo; }
 string Surtidor:: getModelo() const { return modelo; }
