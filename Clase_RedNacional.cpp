@@ -41,9 +41,9 @@ void RedNacional::listarEstaciones() const {
     } else {
         cout << "Listado de estaciones:" << endl;
         for (int i = 0; i < numEstaciones; i++) {
-            cout << "Código: " << estaciones[i]->getCodigoIdentificador()
+            cout << "Codigo: " << estaciones[i]->getCodigoIdentificador()
                  << " - Nombre: " << estaciones[i]->getNombre()
-                 << " - Región: " << estaciones[i]->getRegion() << endl;
+                 << " - Region: " << estaciones[i]->getRegion() << endl;
         }
     }
 }
@@ -74,7 +74,7 @@ void RedNacional::eliminarEstacion(int codigo) {
                 }
 
                 numEstaciones--; // Reducir el número de estaciones
-                cout << "Estación eliminada correctamente." << endl;
+                cout << "Estacion eliminada correctamente." << endl;
                 return;  // Terminar la función
             } else {
                 cout << "No se puede eliminar la estación porque tiene surtidores activos." << endl;
@@ -82,13 +82,13 @@ void RedNacional::eliminarEstacion(int codigo) {
             }
         }
     }
-    cout << "No se encontró la estación con el código proporcionado." << endl;
+    cout << "No se encontro la estación con el codigo proporcionado." << endl;
 }
 
 
 void RedNacional::calcularVentasPorEstacion() const {
     for (int i = 0; i < numEstaciones; i++) {
-        std::cout << "Ventas para la estación: " << estaciones[i]->getNombre() << std::endl;
+        cout << "Ventas para la estacion: " << estaciones[i]->getNombre() << endl;
         estaciones[i]->calcularVentas();
     }
 }
@@ -108,7 +108,7 @@ void RedNacional:: fijarPreciosPorRegion(const string& region, double precioRegu
             }
         }
     } else {
-        cout << "Región no valida." << endl;
+        cout << "Region no valida." << endl;
     }
 }
 
@@ -125,4 +125,11 @@ int RedNacional::getNumEstaciones() const {
 EstacionDeServicio** RedNacional::getEstaciones() const {
     return estaciones;
 }
-
+double RedNacional::getPrecio(int indiceRegion, int indiceCategoria) const {
+    if (indiceRegion >= 0 && indiceRegion < 3 && indiceCategoria >= 0 && indiceCategoria < 3) {
+        return precios[indiceRegion][indiceCategoria];
+    } else {
+        cout << "Indice de region o categoría fuera de rango" <<endl;
+        return 0.0;  // Valor por defecto en caso de error
+    }
+}

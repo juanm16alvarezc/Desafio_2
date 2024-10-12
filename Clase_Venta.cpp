@@ -4,7 +4,7 @@
 using namespace std;
 
 // Constructor con obtención automática de fecha y hora
-Venta::Venta(string cat, double litros, double monto, string pago, string doc) {
+Venta::Venta(string cat, int litros, int monto, string pago, string doc) {
     categoria = cat;
     litrosVendidos = litros;
     montoTotal = monto;

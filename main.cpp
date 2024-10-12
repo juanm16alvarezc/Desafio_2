@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Funciones_.h"
 #include "ClaseRedNacional.h"
-
+#include <cstdlib> // Para rand y srand
 using namespace std;
 
 // Declare the global RedNacional object
@@ -9,6 +9,7 @@ RedNacional redNacional;
 
 int main()
 {
+    srand(static_cast<unsigned int>(time(0)));
     bool repetir=true;
     while(repetir){
         unsigned short int n;

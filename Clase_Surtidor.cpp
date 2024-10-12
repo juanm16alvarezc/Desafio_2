@@ -26,7 +26,7 @@ bool Surtidor::isActivo() const {
 
 
 // Registrar una venta de combustible
-void Surtidor::registrarVenta(double litros, double monto, const string& metodoPago, const string& numeroDocumento, const string& categoria) {
+void Surtidor::registrarVenta(int litros, double monto, const string& metodoPago, const string& numeroDocumento, const string& categoria) {
     // Si no hay espacio suficiente en el arreglo de ventas, redimensionamos
     if (numVentas == capacidadVentas) {
         redimensionarVentas();
@@ -35,9 +35,6 @@ void Surtidor::registrarVenta(double litros, double monto, const string& metodoP
     // Crear un objeto Venta y agregarlo al arreglo
     ventas[numVentas] = Venta(categoria, litros, monto, metodoPago, numeroDocumento);
     numVentas++;
-
-    // Reducir la gasolina en el tanque correspondiente según la categoría de la venta
-    tanque.reducirGasolina(litros, categoria);  // Ahora puede modificar el tanque
 }
 
 
@@ -51,9 +48,6 @@ void Surtidor:: redimensionarVentas() {
     for (int i = 0; i < numVentas; i++) {
         tempVentas[i] = ventas[i];
     }
-
-    // Liberar el arreglo anterior
-    delete[] ventas;
     ventas = tempVentas;  // Asignar el nuevo arreglo
     capacidadVentas = nuevaCapacidad;  // Actualizar la capacidad
 }
