@@ -1,18 +1,19 @@
 #include <iostream>
 using namespace std;
 #include "ClaseRedNacional.h"
+#include "Funciones_.h"
 
 void serviciosDeGestionDeRed(RedNacional& red) {
     unsigned short int N;
     cout << "Ingrese #1 si desea agregar una estacion de servicio" << endl;
     cout << "Ingrese #2 si desea eliminar una estacion de servicio (solo si no posee surtidores activos)" << endl;
-    cout << "Ingrese #3 si desea calcular el monto total de las ventas en cada E/S del país discriminado por categoria del combustible" << endl;
+    cout << "Ingrese #3 si desea calcular el monto total de las ventas en cada E/S del pais discriminado por categoria del combustible" << endl;
     cout << "Ingrese #4 si desea fijar los precios del combustible para toda la red" << endl;
     cout << ": ";
     cin >> N;
 
     while (N <= 0 || N > 4) {
-        cout << "Ingrese valor válido:" << endl;
+        cout << "Ingrese valor valido:" << endl;
         cin >> N;
     }
 
@@ -47,10 +48,10 @@ void serviciosDeGestionDeRed(RedNacional& red) {
         cout << "Las estaciones disponibles son:" << endl;
         red.listarEstaciones();
         int codigo;
-        cout << "Ingrese el codigo de la estación a eliminar: ";
+        cout << "Ingrese el codigo de la estacion a eliminar: ";
         cin >> codigo;
 
-        // Llamada a la función para eliminar la estación
+        // eliminar la estacion
         red.eliminarEstacion(codigo);
     }
     else if (N == 3) {
@@ -90,7 +91,7 @@ void serviciosDeGestionDeEstacionesDeServicio(RedNacional& red) {
     cout << "Ingrese #1 si desea agregar o eliminar surtidor de una E/S" << endl;
     cout << "Ingrese #2 si desea activar o desactivar surtidor de una E/S" << endl;
     cout << "Ingrese #3 si desea consultar el historial de transacciones de cada surtidor de una E/S" << endl;
-    cout << "Ingrese #4 si desea reportar la cantidad de litros vendida según la categoria de combustible" << endl;
+    cout << "Ingrese #4 si desea reportar la cantidad de litros vendida segun la categoria de combustible" << endl;
     cout << "Ingrese #5 si desea simular una venta de combustible" << endl;
     cout << "Ingrese #6 si desea inicializar la capacidad del tanque de suministro" << endl;
     cin >> N;
@@ -110,11 +111,9 @@ void serviciosDeGestionDeEstacionesDeServicio(RedNacional& red) {
         cin >> codigoEstacion;
         EstacionDeServicio** estaciones = red.getEstaciones();  // Obtener el puntero a punteros
         EstacionDeServicio* estacionEncontrada = nullptr;
-
-        // Buscar la estación en el arreglo de estaciones
         for (int i = 0; i < red.getNumEstaciones(); ++i) {
             if (estaciones[i]->getCodigoIdentificador() == codigoEstacion) {
-                estacionEncontrada = estaciones[i];  // Asignar la estación encontrada
+                estacionEncontrada = estaciones[i];  // Asignar la estacion encontrada
                 break;
             }
         }
@@ -127,7 +126,7 @@ void serviciosDeGestionDeEstacionesDeServicio(RedNacional& red) {
 
         // Listar surtidores de la estación seleccionada
         cout << "Lista de surtidores en la estacion con codigo " << codigoEstacion << ":" << endl;
-        estacionEncontrada->listarSurtidores();  // Llamada a la función que lista los surtidores de la estación
+        estacionEncontrada->listarSurtidores();
 
         int opcion;
         cout << "Desea: " << endl;
@@ -144,8 +143,7 @@ void serviciosDeGestionDeEstacionesDeServicio(RedNacional& red) {
             cout << "Ingrese Modelo de maquina: ";
             cin.ignore();
             getline(cin, modeloMaquina);
-            Surtidor nuevoSurtidor(codigoSurtidor, modeloMaquina);
-            estacionEncontrada->agregarSurtidor(nuevoSurtidor); // agregar surtidor
+            estacionEncontrada->agregarSurtidor(codigoSurtidor, modeloMaquina);
             cout << "Surtidor agregado correctamente." << endl;
         }
         else if (opcion == 2) {
@@ -153,16 +151,14 @@ void serviciosDeGestionDeEstacionesDeServicio(RedNacional& red) {
             int codigoSurtidor;
             cout << "Ingrese el codigo del surtidor a eliminar: ";
             cin >> codigoSurtidor;
-            // Llamada a la función de eliminar surtidor
             estacionEncontrada->eliminarSurtidor(codigoSurtidor);
             estacionEncontrada->listarSurtidores();
         }
         else {
-            cout << "Opción no valida." << endl;
+            cout << "Opcion no valida." << endl;
         }
     }
     else if (N == 2) {
-        // Activar o desactivar surtidor
         cout << "Lista de estaciones de servicio:" << endl;
         red.listarEstaciones();  // Listar las estaciones de servicio disponibles
         int codigoEstacion;
@@ -183,10 +179,8 @@ void serviciosDeGestionDeEstacionesDeServicio(RedNacional& red) {
             cout << "Estacion de servicio no encontrada." << endl;
             return;
         }
-
-        // Listar surtidores de la estación seleccionada
         cout << "Lista de surtidores en la estación con codigo " << codigoEstacion << ":" << endl;
-        estacionEncontrada->listarSurtidores();  // Mostrar la lista de surtidores disponibles
+        estacionEncontrada->listarSurtidores();
 
         int codigoSurtidor;
         cout << "Ingrese el codigo del surtidor a activar/desactivar: ";
@@ -199,40 +193,71 @@ void serviciosDeGestionDeEstacionesDeServicio(RedNacional& red) {
         estacionEncontrada->activarDesactivarSurtidor(codigoSurtidor, activar);
     }
     else if (N == 3) {
-        // Consultar historial de transacciones
-        // Implementación pendiente
-    }
-    else if (N == 4) {
-        // Reportar cantidad de litros vendidos por categoría
-        // Implementación pendiente
-    }
-    else if (N == 5) {
-        // Simular venta
-        cout << "Las estaciones disponibles son:" << endl;
         red.listarEstaciones();
-        int codigo;
-        cout << "Ingrese el codigo de la estación para simular la venta: ";
-        cin >> codigo;
+        int codigoEstacion;
+        cout << "Ingrese el codigo de la estacion para consultar el historial de transacciones: ";
+        cin >> codigoEstacion;
 
-        // Buscar la estación por el código
-        EstacionDeServicio** estaciones = red.getEstaciones();
-        for (int i = 0; i < red.getNumEstaciones(); i++) {
-            if (estaciones[i]->getCodigoIdentificador() == codigo) {
-                estaciones[i]->simularVenta(red);
-                break;
-            }
+        EstacionDeServicio* estacionSeleccionada = red.buscarEstacionPorCodigo(codigoEstacion);
+        if (estacionSeleccionada == nullptr) {
+            cout << "Estacion no encontrada." << endl;
+            return;
+        }
+
+        // Recorrer todos los surtidores de la estación seleccionada y mostrar su historial de transacciones
+        cout << "Historial de transacciones para la estacion " << codigoEstacion << ":" << endl;
+        for (int i = 0; i < estacionSeleccionada->getNumSurtidores(); i++) {
+            cout << "Surtidor " << i+1 << ":" << endl;
+            estacionSeleccionada->consultarHistoricoTransacciones(i);
         }
     }
+
+    else if (N == 4) {
+
+        red.listarEstaciones();
+        int codigoEstacion;
+
+        // Solicitar el codigo de la estación de servicio para la que se quiere hacer el reporte
+        cout << "Ingrese el codigo de la estacion para reportar los litros vendidos: ";
+        cin >> codigoEstacion;
+
+        EstacionDeServicio* estacionSeleccionada = red.buscarEstacionPorCodigo(codigoEstacion);
+        // Verificar si la estación fue encontrada
+        if (estacionSeleccionada == nullptr) {
+            cout << "Estacion no encontrada." << endl;
+            return;
+        }
+        cout << "Reporte de litros vendidos por categoria en la estacion con codigo " << codigoEstacion << ":" << endl;
+        estacionSeleccionada->reportarLitrosVendidos();
+    }
+    else if (N == 5) {
+        simulacionDeVentas(red);
+    }
     else if (N == 6) {
+        cout << "Las capacidades del tanque son inicializadas al momento de crear una estacion de servicio" << endl;
 
     }
 }
 
+void simulacionDeVentas(RedNacional& red){
+    cout << "Las estaciones disponibles son:" << endl;
+    red.listarEstaciones();
+    int codigo;
+    cout << "Ingrese el codigo de la estacion para simular la venta: ";
+    cin >> codigo;
 
-//void sistemaDeVerificacionDeFugas(){
-//cout<<"en proceso del goat";
-//}
+    EstacionDeServicio* estacionSeleccionada = red.buscarEstacionPorCodigo(codigo);
+    estacionSeleccionada->simularVenta(red);
 
-//void simulacionDeVentas() {
-//   cout<<"en proceso del goat";
-//}
+}
+void sistemaDeVerificacionDeFugas(RedNacional& red){
+    cout << "Las estaciones disponibles son:" << endl;
+    red.listarEstaciones();
+    int codigo;
+    cout << "Ingrese el codigo de la estacion que desee aplicarle uso del metodo de verificacion de fugas ";
+    cin >> codigo;
+    EstacionDeServicio* estacionSeleccionada = red.buscarEstacionPorCodigo(codigo);
+    estacionSeleccionada->verificarFugas();
+
+}
+

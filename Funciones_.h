@@ -3,6 +3,6 @@
 #include "ClaseRedNacional.h"
 void serviciosDeGestionDeRed(RedNacional& red);
 void serviciosDeGestionDeEstacionesDeServicio(RedNacional& red);
-//void sistemaDeVerificacionDeFugas();
-//void simulacionDeVentas();
+void sistemaDeVerificacionDeFugas(RedNacional& red);
+void simulacionDeVentas(RedNacional& red);
 #endif // FUNCIONES__H

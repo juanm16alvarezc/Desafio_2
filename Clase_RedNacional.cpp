@@ -24,6 +24,14 @@ RedNacional::RedNacional() : numEstaciones(0), capacidad(2) {
 RedNacional::~RedNacional() {
     delete[] estaciones;
 }
+EstacionDeServicio* RedNacional::buscarEstacionPorCodigo(int codigo) const {
+    for (int i = 0; i < numEstaciones; ++i) {
+        if (estaciones[i]->getCodigoIdentificador() == codigo) {
+            return estaciones[i];  // Retornar la estación encontrada
+        }
+    }
+    return nullptr;  // Si no se encontró
+}
 
 void RedNacional::redimensionar(int nuevaCapacidad) {
     EstacionDeServicio** temp = new EstacionDeServicio*[nuevaCapacidad];
@@ -61,28 +69,23 @@ void RedNacional:: agregarEstacion(const string& nombre, int codigo, const strin
 // b. Eliminar estación
 void RedNacional::eliminarEstacion(int codigo) {
     for (int i = 0; i < numEstaciones; i++) {
-        // Buscar la estación por código
         if (estaciones[i]->getCodigoIdentificador() == codigo) {
-            // Verificar si no tiene surtidores activos
             if (estaciones[i]->getSurtidoresActivos() == 0) {
-                // Liberar la memoria de la estación
                 delete estaciones[i];
-
-                // Mover las estaciones para llenar el hueco
                 for (int j = i; j < numEstaciones - 1; j++) {
                     estaciones[j] = estaciones[j + 1];
                 }
 
-                numEstaciones--; // Reducir el número de estaciones
+                numEstaciones--;
                 cout << "Estacion eliminada correctamente." << endl;
                 return;  // Terminar la función
             } else {
-                cout << "No se puede eliminar la estación porque tiene surtidores activos." << endl;
+                cout << "No se puede eliminar la estacion porque tiene surtidores activos." << endl;
                 return;
             }
         }
     }
-    cout << "No se encontro la estación con el codigo proporcionado." << endl;
+    cout << "No se encontro la estacion con el codigo proporcionado." << endl;
 }
 
 
@@ -111,9 +114,6 @@ void RedNacional:: fijarPreciosPorRegion(const string& region, double precioRegu
         cout << "Region no valida." << endl;
     }
 }
-
-
-// Método para obtener el índice de la región
 int RedNacional::getIndiceRegion(const string& region) const {
     if (region == "Norte") return 0;
     if (region == "Centro") return 1;
@@ -129,7 +129,7 @@ double RedNacional::getPrecio(int indiceRegion, int indiceCategoria) const {
     if (indiceRegion >= 0 && indiceRegion < 3 && indiceCategoria >= 0 && indiceCategoria < 3) {
         return precios[indiceRegion][indiceCategoria];
     } else {
-        cout << "Indice de region o categoría fuera de rango" <<endl;
+        cout << "Indice de region o categoria fuera de rango" <<endl;
         return 0.0;  // Valor por defecto en caso de error
     }
 }

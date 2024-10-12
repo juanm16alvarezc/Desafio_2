@@ -23,6 +23,7 @@ public:
     ~RedNacional();
 
     // a. Agregar estación
+    EstacionDeServicio* buscarEstacionPorCodigo(int codigo) const;
     void listarEstaciones() const;
     void agregarEstacion(const string& nombre, int codigo, const string& gerente, const string& region, const double* coords);
     double getPrecio(int indiceRegion, int indiceCategoria) const;

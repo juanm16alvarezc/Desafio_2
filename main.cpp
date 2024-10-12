@@ -31,13 +31,13 @@ int main()
             serviciosDeGestionDeEstacionesDeServicio(redNacional);
         }
         else if (n == 3) {
-            //     sistemaDeVerificacionDeFugas(redNacional);
+                 sistemaDeVerificacionDeFugas(redNacional);
         }
         else if (n == 4) {
-            //     simulacionDeVentas(redNacional);
+            simulacionDeVentas(redNacional);
         }
         cout << "desea realizar mas operaciones, ingrese #1 para si o #2 para no" << endl;
-        cin >> n;
+        cin>>n;
         while (n <= 0 || n > 2) {
             cout << "Ingrese valor valido:" << endl;
             cin >> n;

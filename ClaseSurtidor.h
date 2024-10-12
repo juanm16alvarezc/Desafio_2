@@ -3,7 +3,6 @@
 
 #include <string>
 #include "ClaseVenta.h"
-#include "ClaseTanque.h"
 
 using namespace std;
 

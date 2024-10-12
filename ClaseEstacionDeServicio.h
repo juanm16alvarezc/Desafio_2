@@ -3,6 +3,7 @@
 
 #include <string>
 #include "ClaseSurtidor.h"  // Suponiendo que los surtidores están definidos en otro archivo
+#include "ClaseTanque.h"
 using namespace std;
 class RedNacional;
 class EstacionDeServicio {
@@ -14,7 +15,7 @@ private:
     double coordenadas[2];  // Coordenadas GPS
 
     Tanque tanque;  // Un único tanque para la estación
-    Surtidor* surtidores;  // Arreglo dinámico de surtidores
+    Surtidor** surtidores;  // Arreglo dinámico a puntero de surtidores
     int numSurtidores;
     int capacidadSurtidores;
 
@@ -35,21 +36,21 @@ public:
     string getRegion() const;
     const double* getCoordenadas() const;
     const Tanque& getTanque() const;
-    Surtidor* getSurtidores() const;
+    Surtidor** getSurtidores() const;
     int getSurtidoresActivos() const;
     int getIndicePrecios() const;
-
+    int getNumSurtidores() const;
 
     void listarSurtidores() const;
-    void setNombre(const string& nombre);
+    void setNombre( string& nombre);
     void setCodigoIdentificador(int codigo);
-    void setGerente(const string& gerente);
-    void setRegion(const string& region);
-    void setCoordenadas(const double* coords);
-    void setTanque(const Tanque& nuevoTanque);
+    void setGerente( string& gerente);
+    void setRegion( string& region);
+    void setCoordenadas( double* coords);
+    void setTanque( Tanque& nuevoTanque);
     void setIndicePrecios(int indice);
     // a. Agregar un surtidor
-    void agregarSurtidor(const Surtidor& surtidor);
+    void agregarSurtidor(int cod, string mod);
 
     // b. Eliminar un surtidor (solo si no tiene ventas activas)
     void eliminarSurtidor(int codigoSurtidor);
@@ -72,7 +73,7 @@ public:
     // Método para calcular las ventas totales en la estación
     void simularVenta(const RedNacional& red);
     void calcularVentas() const ;
-
+    void verificarFugas() const;
 };
 
 #endif // CLASEESTACIONDESERVICIO_H
