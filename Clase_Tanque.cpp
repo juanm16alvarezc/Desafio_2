@@ -22,12 +22,11 @@ void Tanque::asignarCapacidad(double nuevaCapacidad, const string& categoria) {
     }
 }
 
-// Métodos para obtener la capacidad de cada tanque
+//getters
 double Tanque::getCapacidadTotalRegular() const { return capacidadTotalRegular; }
 double Tanque:: getCapacidadTotalPremium() const { return capacidadTotalPremium; }
 double Tanque::getCapacidadTotalEcoExtra() const { return capacidadTotalEcoExtra; }
 
-// Métodos para obtener la cantidad disponible actual de gasolina
 double Tanque::getGasolinaDisponibleRegular() const { return gasolinaDisponibleRegular; }
 double Tanque::getGasolinaDisponiblePremium() const { return gasolinaDisponiblePremium; }
 double Tanque::getGasolinaDisponibleEcoExtra() const { return gasolinaDisponibleEcoExtra; }
@@ -55,7 +54,7 @@ void Tanque::reducirGasolina(double litrosVendidos, const string& categoria) {
     }
 }
 
-// Método para mostrar información del tanque
+// Metodo despliegue tanque
 void Tanque::mostrarInfo() const {
     cout << "Capacidad total Regular: " << capacidadTotalRegular << " litros\n"
          << "Capacidad total Premium: " << capacidadTotalPremium << " litros\n"
