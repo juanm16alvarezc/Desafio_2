@@ -42,8 +42,8 @@ void RedNacional::listarEstaciones() const {
         cout << "Listado de estaciones:" << endl;
         for (int i = 0; i < numEstaciones; i++) {
             cout << "Codigo: " << estaciones[i]->getCodigoIdentificador()
-                 << " - Nombre: " << estaciones[i]->getNombre()
-                 << " - Region: " << estaciones[i]->getRegion() << endl;
+            << " - Nombre: " << estaciones[i]->getNombre()
+            << " - Region: " << estaciones[i]->getRegion() << endl;
         }
     }
 }

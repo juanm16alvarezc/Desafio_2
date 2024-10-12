@@ -1,0 +1,61 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-dc2d97e2a32ea18ef225.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "CODE_DESAFIO2",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CODE_DESAFIO2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CODE_DESAFIO2-Debug-96fc9240428352ba8e76.json",
+					"name" : "CODE_DESAFIO2",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Dell/OneDrive/Desktop/Udea/2 semestre/informatica 2/Desafio2_repo/DESAFIO_2/CODE_DESAFIO2/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug",
+		"source" : "C:/Users/Dell/OneDrive/Desktop/Udea/2 semestre/informatica 2/Desafio2_repo/DESAFIO_2/CODE_DESAFIO2"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

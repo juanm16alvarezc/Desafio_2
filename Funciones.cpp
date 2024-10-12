@@ -207,22 +207,22 @@ void serviciosDeGestionDeEstacionesDeServicio(RedNacional& red) {
         // Implementación pendiente
     }
     else if (N == 5) {
-    // Simular venta
-    cout << "Las estaciones disponibles son:" << endl;
-    red.listarEstaciones();
-    int codigo;
-    cout << "Ingrese el codigo de la estación para simular la venta: ";
-    cin >> codigo;
+        // Simular venta
+        cout << "Las estaciones disponibles son:" << endl;
+        red.listarEstaciones();
+        int codigo;
+        cout << "Ingrese el codigo de la estación para simular la venta: ";
+        cin >> codigo;
 
-    // Buscar la estación por el código
-    EstacionDeServicio** estaciones = red.getEstaciones();
-    for (int i = 0; i < red.getNumEstaciones(); i++) {
-        if (estaciones[i]->getCodigoIdentificador() == codigo) {
-            estaciones[i]->simularVenta(red);
-            break;
+        // Buscar la estación por el código
+        EstacionDeServicio** estaciones = red.getEstaciones();
+        for (int i = 0; i < red.getNumEstaciones(); i++) {
+            if (estaciones[i]->getCodigoIdentificador() == codigo) {
+                estaciones[i]->simularVenta(red);
+                break;
+            }
         }
     }
-}
     else if (N == 6) {
 
     }
