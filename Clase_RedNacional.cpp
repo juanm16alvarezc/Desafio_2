@@ -8,17 +8,17 @@ RedNacional::RedNacional() : numEstaciones(0), capacidad(2),contCodigoES(1) {
     estaciones = new EstacionDeServicio*[capacidad];
 
     // Inicializar los precios (Ejemplo)
-    precios[0][0] = 1.10;  // Norte, Regular
-    precios[0][1] = 1.50;  // Norte, Premium
-    precios[0][2] = 1.30;  // Norte, EcoExtra
+    precios[0][0] = 7000;  // Norte, Regular
+    precios[0][1] = 15000;  // Norte, Premium
+    precios[0][2] = 10000;  // Norte, EcoExtra
 
-    precios[1][0] = 1.00;  // Centro, Regular
-    precios[1][1] = 1.40;  // Centro, Premium
-    precios[1][2] = 1.25;  // Centro, EcoExtra
+    precios[1][0] = 27000;  // Centro, Regular
+    precios[1][1] = 32000;  // Centro, Premium
+    precios[1][2] = 16000;  // Centro, EcoExtra
 
-    precios[2][0] = 1.20;  // Sur, Regular
-    precios[2][1] = 1.60;  // Sur, Premium
-    precios[2][2] = 1.35;  // Sur, EcoExtra
+    precios[2][0] = 14000;  // Sur, Regular
+    precios[2][1] = 30000;  // Sur, Premium
+    precios[2][2] = 20000;  // Sur, EcoExtra
 }
 
 RedNacional::~RedNacional() {
