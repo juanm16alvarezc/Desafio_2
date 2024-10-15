@@ -16,6 +16,7 @@ private:
 
     // indice region para precios
     int getIndiceRegion(const string& region) const;
+    unsigned int contCodigoES;
 
 public:
     // Constructor y Destructor
@@ -24,7 +25,7 @@ public:
 
     EstacionDeServicio* buscarEstacionPorCodigo(int codigo) const;
     void listarEstaciones() const;
-    void agregarEstacion(const string& nombre, int codigo, const string& gerente, const string& region, const double* coords);
+    void agregarEstacion(const string& nombre, const string& gerente, const string& region, const double* coords);
     double getPrecio(int indiceRegion, int indiceCategoria) const;
     // b. Eliminar estación
     void eliminarEstacion(int codigo);

@@ -5,4 +5,5 @@ void serviciosDeGestionDeRed(RedNacional& red);
 void serviciosDeGestionDeEstacionesDeServicio(RedNacional& red);
 void sistemaDeVerificacionDeFugas(RedNacional& red);
 void simulacionDeVentas(RedNacional& red);
+void saltosDeLinea();
 #endif // FUNCIONES__H

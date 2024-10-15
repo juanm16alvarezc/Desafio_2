@@ -2,8 +2,7 @@
 #include "ClaseSurtidor.h"
 using namespace std;
 #include "iostream"
-Surtidor::Surtidor(int cod, string mod , bool act , int capVentas )
-    : codigo(cod), modelo(mod), activo(act), numVentas(0), capacidadVentas(capVentas) {
+Surtidor::Surtidor(int cod, string mod , bool act , int capVentas ): codigo(cod), modelo(mod), activo(act), numVentas(0), capacidadVentas(capVentas) {
     ventas = new Venta[capacidadVentas]{};
 }
 

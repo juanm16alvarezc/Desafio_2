@@ -16,18 +16,15 @@ void serviciosDeGestionDeRed(RedNacional& red) {
         cout << "Ingrese valor valido:" << endl;
         cin >> N;
     }
-
+    saltosDeLinea();
     cout << '\n';
 
     if (N == 1) {
         string nombre, gerente, region;
-        int codigo;
         double coords[2];
         cout << "Ingrese el nombre de la estacion de servicio: ";
         cin.ignore();
         getline(cin, nombre);
-        cout << "Ingrese el codigo de la estacion: ";
-        cin >> codigo;
         cout << "Ingrese el nombre del gerente: ";
         cin.ignore();
         getline(cin, gerente);
@@ -36,7 +33,7 @@ void serviciosDeGestionDeRed(RedNacional& red) {
         cout << "Ingrese las coordenadas GPS (latitud y longitud separadas por espacio): ";
         cin >> coords[0] >> coords[1];
         // Crear la estación de servicio y agregarla a la red
-        red.agregarEstacion(nombre, codigo, gerente, region, coords);
+        red.agregarEstacion(nombre, gerente, region, coords);
 
         cout << "Estacion de servicio agregada correctamente." << endl;
     }
@@ -88,7 +85,7 @@ void serviciosDeGestionDeEstacionesDeServicio(RedNacional& red) {
         cout << "Ingrese valor valido:" << endl;
         cin >> N;
     }
-
+    saltosDeLinea();
     cout << '\n';
     if (N == 1) {
         cout << "Lista de estaciones de servicio:" << endl;
@@ -123,14 +120,11 @@ void serviciosDeGestionDeEstacionesDeServicio(RedNacional& red) {
 
         if (opcion == 1) {
             // Agregar surtidor
-            int codigoSurtidor;
-            string modeloMaquina;
-            cout << "Ingrese el codigo del nuevo surtidor: ";
-            cin >> codigoSurtidor;
-            cout << "Ingrese Modelo de maquina: ";
-            cin.ignore();
-            getline(cin, modeloMaquina);
-            estacionEncontrada->agregarSurtidor(codigoSurtidor, modeloMaquina);
+            string modeloMaquina="PX";
+            for (int i = 0; i < 6; i++) {
+                modeloMaquina += to_string(rand() % 5);
+            }
+            estacionEncontrada->agregarSurtidor(modeloMaquina);
         }
         else if (opcion == 2) {
             // Eliminar surtidor
@@ -226,19 +220,27 @@ void simulacionDeVentas(RedNacional& red){
     int codigo;
     cout << "Ingrese el codigo de la estacion para simular la venta: ";
     cin >> codigo;
-
+    saltosDeLinea();
     EstacionDeServicio* estacionSeleccionada = red.buscarEstacionPorCodigo(codigo);
     estacionSeleccionada->simularVenta(red);
-
 }
 void sistemaDeVerificacionDeFugas(RedNacional& red){
     cout << "Las estaciones disponibles son:" << endl;
     red.listarEstaciones();
+    if(red.getNumEstaciones()==0){
+        return;
+    }
     int codigo;
     cout << "Ingrese el codigo de la estacion que desee aplicarle uso del metodo de verificacion de fugas ";
     cin >> codigo;
+    saltosDeLinea();
     EstacionDeServicio* estacionSeleccionada = red.buscarEstacionPorCodigo(codigo);
     estacionSeleccionada->verificarFugas();
 
 }
 
+void saltosDeLinea(){
+    int p= 5;
+    for (int i=0;i<p;i++)
+        cout <<'\n';
+}

@@ -21,8 +21,8 @@ void EstacionDeServicio::redimensionarSurtidores(int nuevaCapacidad) {
     for (int i = 0; i < numSurtidores; i++) {
         temp[i] = surtidores[i];
     }
-
-    //delete[] surtidores; // Liberar la memoria del arreglo anterior
+    delete[] surtidores;
+    //surtidores = new Surtidor*[nuevaCapacidad]{};
     surtidores = temp;
     capacidadSurtidores = nuevaCapacidad;
 }
@@ -33,7 +33,7 @@ int EstacionDeServicio::generarValorAleatorio(int min, int max) const {
 }
 
 EstacionDeServicio::EstacionDeServicio(const string& nombre, int codigo, const string& gerente, const string& region, const double* coords)
-    : nombre(nombre), codigoIdentificador(codigo), gerente(gerente), region(region), tanque(), numSurtidores(0), capacidadSurtidores(2) {
+    : nombre(nombre), codigoIdentificador(codigo), gerente(gerente), region(region), tanque(), numSurtidores(0), capacidadSurtidores(2),contCodigoS(1) {
     coordenadas[0] = coords[0];
     coordenadas[1] = coords[1];
     surtidores = new Surtidor*[capacidadSurtidores]{};
@@ -88,7 +88,7 @@ void EstacionDeServicio::setIndicePrecios(int indice) {
     indicePrecios = indice;
 }
 // a. Agregar un surtidor
-void EstacionDeServicio::agregarSurtidor( int cod, string mod) {
+void EstacionDeServicio::agregarSurtidor(string mod) {
     if (numSurtidores>12){
         cout << "No se pueden agregar mas surtidores a esta estacion de servicio" << endl;
         return ;
@@ -96,8 +96,9 @@ void EstacionDeServicio::agregarSurtidor( int cod, string mod) {
     if (numSurtidores >= capacidadSurtidores) {
         redimensionarSurtidores(capacidadSurtidores * 2);
     }
-    surtidores[numSurtidores] = new Surtidor(cod,mod);
+    surtidores[numSurtidores] = new Surtidor(contCodigoS,mod);
     numSurtidores++;
+    contCodigoS++;
     cout << "Surtidor agregado correctamente." << endl;
 }
 

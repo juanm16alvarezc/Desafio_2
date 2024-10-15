@@ -23,7 +23,7 @@ int main()
             cout << "Ingrese valor valido:" << endl;
             cin >> n;
         }
-
+        saltosDeLinea();
         if (n == 1) {
             serviciosDeGestionDeRed(redNacional);
         }
@@ -36,8 +36,10 @@ int main()
         else if (n == 4) {
             simulacionDeVentas(redNacional);
         }
+        saltosDeLinea();
         cout << "desea realizar mas operaciones, ingrese #1 para si o #2 para no" << endl;
         cin>>n;
+        saltosDeLinea();
         while (n <= 0 || n > 2) {
             cout << "Ingrese valor valido:" << endl;
             cin >> n;

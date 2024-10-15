@@ -4,7 +4,7 @@
 #include "ClaseRedNacional.h"
 
 using namespace std;
-RedNacional::RedNacional() : numEstaciones(0), capacidad(2) {
+RedNacional::RedNacional() : numEstaciones(0), capacidad(2),contCodigoES(1) {
     estaciones = new EstacionDeServicio*[capacidad];
 
     // Inicializar los precios (Ejemplo)
@@ -57,13 +57,14 @@ void RedNacional::listarEstaciones() const {
 }
 
 // Agregar estacion
-void RedNacional:: agregarEstacion(const string& nombre, int codigo, const string& gerente, const string& region, const double* coords){
+void RedNacional:: agregarEstacion(const string& nombre, const string& gerente, const string& region, const double* coords){
 
     if (numEstaciones == capacidad) {
         redimensionar(capacidad * 2);
     }
-    estaciones[numEstaciones] = new EstacionDeServicio(nombre,codigo,gerente,region,coords);
+    estaciones[numEstaciones] = new EstacionDeServicio(nombre,contCodigoES,gerente,region,coords);
     numEstaciones++;
+    contCodigoES++;
 }
 
 // Eliminar estacin

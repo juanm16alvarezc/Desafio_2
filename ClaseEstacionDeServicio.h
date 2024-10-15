@@ -25,6 +25,7 @@ private:
     // Generar un valor aleatorio entre un rango
     int generarValorAleatorio(int min, int max) const;
     int indicePrecios;
+    unsigned int contCodigoS;
 public:
     EstacionDeServicio(const string& nombre, int codigo, const string& gerente, const string& region, const double* coords);
     ~EstacionDeServicio();
@@ -50,7 +51,7 @@ public:
     void setTanque( Tanque& nuevoTanque);
     void setIndicePrecios(int indice);
     //Agregar un surtidor
-    void agregarSurtidor(int cod, string mod);
+    void agregarSurtidor(string mod);
 
     //Eliminar un surtidor (solo si no tiene ventas activas)
     void eliminarSurtidor(int codigoSurtidor);
